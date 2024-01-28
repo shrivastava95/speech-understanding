@@ -10,12 +10,13 @@ def convert_m4a_to_mp3(source_folder, target_folder):
         if file.endswith(".m4a"):
             # Construct the full file paths
             source_path = os.path.join(source_folder, file)
-            target_path = os.path.join(target_folder, os.path.splitext(file)[0] + ".mp3")
+            target_path = os.path.join(target_folder, os.path.splitext(file)[0] + ".wav")
             
             # Construct the ffmpeg command for conversion
             cmd = [
                 'ffmpeg',
                 '-i', source_path,  # Input file
+                '-acodec', 'pcm_s16le',
                 '-ar', '16000',  # Set sampling rate to 16kHz
                 '-ab', '128k',  # Set bitrate, adjust as needed
                 '-map', 'a',  # Map audio streams
