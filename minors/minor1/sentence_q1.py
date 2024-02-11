@@ -1,0 +1,1 @@
+sentence = "Hello, everyone, my name is Ishaan Shrivastava, and here is a spectrogram for the minor1 exam."
